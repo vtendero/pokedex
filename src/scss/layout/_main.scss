@@ -1,0 +1,81 @@
+body {
+    background-image: url(../images/black-wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.main {
+    min-height: calc(100vh - 220px);
+    padding: 20px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultsList {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-evenly;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+        background: $textColor;
+        width: 260px;
+        height: 260px;
+        border: 5px solid $blackColor;        
+        border-radius: 260px;
+        // margin: 10px;
+        box-shadow: inset 25px 70px 8px 0 red;
+        font-family: $pokemonFont;
+        color: $textColor;
+
+        @include tablet {
+            width: 280px;
+            height: 280px;        
+            border-radius: 280px;
+        }
+        
+        &--name {
+            font-size: larger;
+        }
+        
+        &--image {
+            width: 120px;
+        }
+    }
+}
+
+.btn-danger {
+    width: 140px;
+    font-family: $pokemonFont;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    height: 40px;
+    
+    &__link {
+        color: $textColor;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            color: $textColor;
+        }
+    }
+}
+
+.js-hidden {
+    display: none;
+}
+
+.js-pokemonsDetail {
+    color: white;
+}
