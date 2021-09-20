@@ -1,7 +1,6 @@
 {
 	"name": "adalab-web-starter-kit",
 	"version": "3.0.1",
-	"description": "Adalab web starter kit",
 	"dependencies": {
 		"bootstrap": "^5.0.2",
 		"browser-sync": "^2.26.12",
@@ -30,12 +29,5 @@
 		"docs": "rm -rf docs && ./node_modules/.bin/gulp docs",
 		"push-docs": "rm -rf docs && gulp docs && git add docs/* && git commit -m \"Update docs\" && git push",
 		"deploy": "npm run push-docs"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+ssh://git@github.com:Adalab/adalab-web-starter-kit.git"
-	},
-	"author": "Adalab",
-	"license": "MIT",
-	"homepage": "https://github.com/adalab/adalab-web-starter-kit"
+	}
 }
