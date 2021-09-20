@@ -15,7 +15,6 @@ body {
 .resultsList {
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
     list-style-type: none;
     padding: 0;
@@ -32,7 +31,6 @@ body {
         height: 260px;
         border: 5px solid $blackColor;        
         border-radius: 260px;
-        // margin: 10px;
         box-shadow: inset 25px 70px 8px 0 red;
         font-family: $pokemonFont;
         color: $textColor;
@@ -72,10 +70,175 @@ body {
     }
 }
 
+.pokemonsDetail {
+    color: $textColor;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+
+    &__backImage {
+        display: flex;
+        width: 260px;
+        height: 260px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 260px;
+
+        &--image {
+            width: 160px;
+        }
+    }
+
+    &__buttonBack {
+        color: $textColor;
+        border: none;
+        background: none;
+        padding: 3px;
+        margin: 0 0 0 197px;
+        font-size: 20px;
+    }
+
+    &__type {
+        text-align: center;
+    }
+
+    &__size {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+}
+
 .js-hidden {
     display: none;
 }
 
-.js-pokemonsDetail {
-    color: white;
+.js-notFound {
+    color:$textColor;
+}
+
+.steel {
+    color: #A8A8C0;
+    &__back {
+        background: #9a9aa2;
+    }
+}
+
+.water {
+    color: #3899F8;
+    &__back {
+        background: #3878f8;
+    }
+}
+
+.bug {
+    color: #A8B820;
+    &__back {
+        background: #85b820;
+    }
+}
+
+.dragon {
+    color: #7860E0;
+    &__back {
+        background: #9e60e0;
+    }
+}
+
+.electric {
+    color: #F8D030;
+    &__back {
+        background: #af8d04;
+    }
+}
+
+.ghost {
+    color: #6060B0;
+    &__back {
+        background: #8060b0;
+    }
+}
+
+.fire {
+    color: #F05030;
+    &__back {
+        background: #f07630;
+    }
+}
+
+.fairy {
+    color: #E79FE7;
+    &__back {
+        background: #f38bc2;
+    }
+}
+
+.ice {
+    color: #58C8E0;
+    &__back {
+        background: #82d1e2;
+    }
+}
+
+.fighting {
+    color: #A05038;
+    &__back {
+        background: #a06238;
+    }
+}
+
+.normal {
+    color: #A8A090;
+    &__back {
+        background: #c5b89e;
+    }
+}
+
+.plant {
+    color: #78C850;
+    &__back {
+        background: #50c88a;
+    }
+}
+
+.psychic {
+    color: #F870A0;
+    &__back {
+        background: #f87070;
+    }
+}
+
+.rock {
+    color: #B8A058;
+    &__back {
+        background: #bba873;
+    }
+}
+
+.dark {
+    color: #7A5848;
+    &__back {
+        background: #6c5a3f;
+    }
+}
+
+.ground {
+    color: #E9D6A4;
+    &__back {
+        background: #ccb67d;
+    }
+}
+
+.poison {
+    color: #B058A0;
+    &__back {
+        background: #a94697;
+    }
+}
+
+.flying {
+    color: #98A8F0;
+    &__back {
+        background: #8298fa;
+    }
 }
