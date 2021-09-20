@@ -3,65 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Adalab Web Starter Kit</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>Pokedex</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Goldman:wght@400;700&display=swap&family=Inconsolata&family=Sriracha&family=Yusei+Magic&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/page.css" />
+    <script src="https://kit.fontawesome.com/f2e0e49a34.js"
+      crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" href="./assets/images/favicon.png" />
   </head>
 
   <body>
     <div class="page">
-      <header class="page__header">
-        <img src="./assets/images/logo-adalab.png" alt="Adalab">
-        <h1>Bienvenidos a Adalab</h1>
+      <header class="header">
+          <img class="header__image" src="/assets/images/pokeball.png" alt="Pokeball logo">
+          <h1 class="header__title">Generation 1 Pokédex</h1>
+
+          <form id="myForm" class="header__form js-form" method="GET">
+              <label class="header__form--label">Search</label>
+              <div class="header__form--container">
+                  <input class="header__form--input js-input" type="text" placeholder="Pokemon name" required>
+                  <i class="fas fa-times header__form--reset js-reset" title="Reset"></i>
+                  <i class="fas fa-search header__form--search js-searchButton" title="Search"></i>
+              </div>
+          </form>
       </header>
-
-      <main class="page__main">
-        <h2>Este es el starter kit de Adalab</h2>
-        <p>Lo usamos para aprender:</p>
-        <ul class="main__list">
-          <li>Sass</li>
-          <li>HTML partials</li>
-          <li>Gulp</li>
-          <li>y muchas cosas más</li>
-        </ul>
-        <p>Si quieres saber cúales son las rutas correctas para:</p>
-        <ul class="main__list">
-          <li>
-            una <code class="code">&lt;img /&gt;</code> mira el fichero
-            <code class="code">./src/html/partials/header.html</code>.
-          </li>
-          <li>
-            y para un <code class="code">background-image</code> mira el fichero
-            <code class="code">./src/html/scss/layout/_page.scss</code>.
-          </li>
-        </ul>
-        <p>
-          Si quieres saber cómo usar un partial HTML dentro de otro partial, busca en la carperta
-          <code class="code">./src/html/index.html</code> y
-          <code class="code">./src/html/partials/main.html</code>, y verás cómo estamos creando estos
-          enlaces:
-        </p>
-        <ul class="main__list">
-          <li>
-            <a class="link__adalab" href="https://adalab.es">Adalab</a>
-
-          </li>
-          <li>
-            <a class="" href="./more-info.html">Más info del starter kit</a>
-
-          </li>
-        </ul>
+      <main class="main">
+          <p class="js-notFound js-hidden">Pokemon not found. Make a new search.</p>
+          <ul class="resultsList js-results js-reset js-hidden">
+              <li class="resultsList__item js-pokeId" id="">
+                  <h3 class="resultsList__item--name js-pokeName"></h3>
+                  <img class="resultsList__item--image js-pokeImage" src="" alt="">
+              </li>
+          </ul>
+          <button class="btn-danger js-detail js-hidden">Go to detail</button>
+          <section class="pokemonsDetail js-pokemonsDetail js-hidden">
+              <div class="pokemonsDetail__backImage js-backgroundImage">
+                  <img class="pokemonsDetail__backImage--image js-pokeImageDetail" src="" alt="">
+              </div>
+              <button type='button' class="pokemonsDetail__buttonBack far fa-window-close js-backHome"></button>
+              <div class="pokemonsDetail__type">
+                  <h5 >Type:</h5>
+                  <h6 class="pokemonsDetail__type js-pokeType"></h6>
+              </div>
+              <div class="pokemonsDetail__size">
+                  <div class="pokemonsDetail__size--height">
+                      <h6>Height</h6>
+                      <h6 class="js-pokeTypeHeight"></h6>
+                  </div>
+                  <div class="pokemonsDetail__size--weight">
+                      <h6>Weight</h6>
+                      <h6 class="js-pokeTypeWeight"></h6>
+                  </div>
+              </div>
+          </section>
       </main>
 
-      <footer class="page__footer">
-        <small>
-          &copy; Todos los derechos reservados
-          <a class="link__adalab" href="https://adalab.es">Adalab</a>
-
-        </small>
-      </footer>
-
+      <footer class="footer">
+              <div class="footer__info">
+                  <small class="footer__info--copy">vtendero © 2021</small>
+                  <small class="footer__info--motto">dark mode coding</small>
+                  <section class= "footer__socialMedia">
+                      <a class="footer__socialMedia--icon" title="Github" href="https://github.com/vtendero"   target="_blank">
+                          <i class="fab fa-github footer__socialMedia--icon"></i></a>
+                      <a class="footer__socialMedia--icon" title="Linkedin" href="https://www.linkedin.com/in/valle-tendero/" target="_blank">
+                          <i class="fab fa-linkedin footer__socialMedia--icon"></i>
+                      </a>
+                  </section>
+              </div>
+              <img class="footer__logo" src="./assets/images/world.jpg" alt="Logo"></img>
+          </footer>
     </div>
     <script src="./assets/js/main.js"></script>
   </body>
