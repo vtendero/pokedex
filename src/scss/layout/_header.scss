@@ -1,0 +1,122 @@
+.header {
+  padding: 10px 0 20px;
+  align-items: center;
+  
+  @include tablet {
+    display: flex;
+    padding: 20px;
+  }
+
+  &__image {
+    width: 60px;
+    padding-left: 10px;
+
+    @include tablet {
+      width: 80px;
+      padding-right: 10px;
+    }
+  }
+
+  &__title {
+    color: $textColor;
+    text-transform:uppercase;
+    font-size: 40px;
+    font-family: $pokemonFont;
+    margin: 30px 0 30px;
+    text-align: center;
+
+    @include tablet {
+      text-align:inherit;
+      margin: 0;
+      width: 400px;
+    }
+  }
+
+  &__form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: $textColor;
+    font-family: $pokemonFont;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      margin-left: auto;
+      text-align: inherit;
+    }
+
+    &--label {
+      padding: 0 160px 8px 0;
+      text-align: center;
+
+      @include tablet {
+        padding: 0 10px 0 0;
+      }
+    }
+
+    &--container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--input {
+      font-family: $pokemonFont;
+      padding: 10px;
+      width: 180px;
+      height: 40px;
+      border: none;
+      font-size: 16px;
+
+      @include tablet {
+        width: 200px;
+        height: 50px;
+      }
+
+      &:focus {
+        outline: 0 none;
+        border: 3px solid $redColor;
+      }
+    }
+
+    &--reset {
+      background: none;
+      border: none;
+      margin: 0 0 0 105px;
+      font-size: 20px;
+      padding: 5px;
+      cursor: pointer;
+      color: $redColor;
+      position: absolute;
+    }
+
+    &--search {
+      padding: 7.5px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      color: $textColor;
+      font-family: $pokemonFont;
+      font-size: 20px;
+      box-shadow: none;
+      outline: none;
+      cursor: pointer;
+      transition: background linear 0.4s;
+      
+      &:hover {
+        background: $redColor;
+        color: $blackColor;
+      }
+
+      @include tablet {
+        width: 50px;
+        height: 50px;
+        padding: 12px 10px;
+        text-align: center
+      }
+    }
+  }
+}
