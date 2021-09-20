@@ -86,16 +86,17 @@
     &--reset {
       background: none;
       border: none;
-      margin: 0 0 0 105px;
+      margin: 0 0 0 -30px;
       font-size: 20px;
       padding: 5px;
       cursor: pointer;
       color: $redColor;
-      position: absolute;
+      position: relative;
     }
 
     &--search {
       padding: 7.5px;
+      margin-left: 8px;
       width: 40px;
       height: 40px;
       border: none;
