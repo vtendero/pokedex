@@ -93,12 +93,13 @@ body {
         color: $textColor;
         border: none;
         background: none;
-        padding: 3px;
-        margin: 0 0 0 197px;
-        font-size: 20px;
+        padding: 5px;
+        font-size: 25px;
+        transform: translate(100px, 290px);
     }
 
     &__type {
+        margin-top: 20px;
         text-align: center;
     }
 

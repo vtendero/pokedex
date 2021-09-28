@@ -9,11 +9,6 @@ const pokemonsDetail = document.querySelector('.js-pokemonsDetail');
 const pokeId = document.querySelector('.js-pokeId');
 const pokeName = document.querySelector('.js-pokeName');
 const pokeImage = document.querySelector('.js-pokeImage');
-const pokeImageDetail = document.querySelector('.js-pokeImageDetail');
-const backgroundImage = document.querySelector('.js-backgroundImage');
-const pokeType = document.querySelector('.js-pokeType');
-const pokeTypeHeight = document.querySelector('.js-pokeTypeHeight');
-const pokeTypeWeight = document.querySelector('.js-pokeTypeWeight');
 const backHome = document.querySelector('.js-backHome');
 const notFound = document.querySelector('.js-notFound');
 
@@ -77,6 +72,7 @@ function renderPokemons(pokemon) {
   buttonDetailElement.classList.remove('js-hidden');
   notFound.classList.add('js-hidden');
   pokemonsDetail.classList.add('js-hidden');
+  backHome.classList.add('js-hidden');
   pokeId.id = `${pokemon.id}`;
   pokeName.textContent = `${pokemon.pokeName}`;
   pokeImage.src = `${pokemon.image}`;
@@ -103,14 +99,26 @@ function renderPokemonsDetails(pokemon) {
   resultsPokemon.classList.add('js-hidden');
   buttonDetailElement.classList.add('js-hidden');
   pokemonsDetail.classList.remove('js-hidden');
-  pokeImageDetail.src = `${pokemon.image}`;
-  backgroundImage.classList.add(pokemon.type + '__back');
-  pokeImageDetail.alt = `${pokemon.pokeName} picture`;
-  // pokeNameDetail.textContent = `${pokemon.pokeName}`;
-  pokeType.textContent = `${pokemon.type}`;
-  pokeType.classList.add(pokemon.type);
-  pokeTypeHeight.textContent = `${pokemon.height} dm`;
-  pokeTypeWeight.textContent = `${pokemon.weight} hg`;
+  backHome.classList.remove('js-hidden');
+  let htmlCode = '';
+  htmlCode += `<div class="pokemonsDetail__backImage ${pokemon.type + '__back'}">`;
+  htmlCode += `<img class="pokemonsDetail__backImage--image" src="${pokemon.image}" alt="${pokemon.pokeName}">`;
+  htmlCode += `</div>`;
+  htmlCode += `<div class="pokemonsDetail__type">`;
+  htmlCode += `<h5 >Type:</h5>`;
+  htmlCode += `<h6 class="pokemonsDetail__type ${pokemon.type}">${pokemon.type}</h6>`;
+  htmlCode += `</div>`;
+  htmlCode += `<div class="pokemonsDetail__size">`;
+  htmlCode += `<div class="pokemonsDetail__size--height">`;
+  htmlCode += `<h6>Height</h6>`;
+  htmlCode += `<h6 class="">${pokemon.height} dm</h6>`;
+  htmlCode += `</div>`;
+  htmlCode += `<div class="pokemonsDetail__size--weight">`;
+  htmlCode += `<h6>Weight</h6>`;
+  htmlCode += `<h6 class="t">${pokemon.weight} hg</h6>`;
+  htmlCode += `</div>`;
+  htmlCode += `</div>`;
+  pokemonsDetail.innerHTML = htmlCode;
   listener();
 }
 
@@ -122,4 +130,5 @@ function handlebackHome() {
   resultsPokemon.classList.remove('js-hidden');
   buttonDetailElement.classList.remove('js-hidden');
   pokemonsDetail.classList.add('js-hidden');
+  backHome.classList.add('js-hidden');
 }
